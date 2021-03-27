@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { init } from 'emailjs-com';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Grid from '@material-ui/core/Grid';
 
 export default function Contact(props) {
   const [formName, setName] = useState('');
@@ -69,7 +70,7 @@ export default function Contact(props) {
   };
 
   if (props.data) {
-   //  var name = props.data.name;
+    //  var name = props.data.name;
     var street = props.data.address.street;
     var city = props.data.address.city;
     var state = props.data.address.state;
@@ -123,11 +124,13 @@ export default function Contact(props) {
               <textarea cols='50' rows='15' id='contactMessage' name='contactMessage' value={formMessage} onChange={handleChange}></textarea>
             </div>
 
-            <div>
-              <button className='send' onClick={submitClicked}>
-                Submit
-              </button>
-            </div>
+            <Grid container justify='center'>
+              <Grid item xs={4}>
+                <button className='send' onClick={submitClicked}>
+                  Submit
+                </button>
+              </Grid>
+            </Grid>
           </fieldset>
           {/* </form> */}
         </div>
@@ -146,41 +149,41 @@ export default function Contact(props) {
           </div> */}
           <h4>Contact Details</h4>
           <table>
-              <tbody>
-                <tr>
-                  <td className='white'>
-                    <FontAwesomeIcon icon='user' />
-                  </td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>Nuo (Tony) Chen</td>
-                </tr>
-                <tr>
-                  <td>
-                    <FontAwesomeIcon icon='envelope' />
-                  </td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>{email}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <FontAwesomeIcon icon='phone-square' />
-                  </td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>{phone}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <FontAwesomeIcon icon='address-card' />
-                  </td>
-                  <td>&nbsp;&nbsp;</td>
-                  <td>
-                    {street}
-                    <br />
-                    {city}, {state}, {zip}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <tbody>
+              <tr>
+                <td className='white'>
+                  <FontAwesomeIcon icon='user' />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>Nuo (Tony) Chen</td>
+              </tr>
+              <tr>
+                <td>
+                  <FontAwesomeIcon icon='envelope' />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>{email}</td>
+              </tr>
+              <tr>
+                <td>
+                  <FontAwesomeIcon icon='phone-square' />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>{phone}</td>
+              </tr>
+              <tr>
+                <td>
+                  <FontAwesomeIcon icon='address-card' />
+                </td>
+                <td>&nbsp;&nbsp;</td>
+                <td>
+                  {street}
+                  <br />
+                  {city}, {state}, {zip}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </aside>
       </div>
     </section>

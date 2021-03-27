@@ -961,15 +961,15 @@ call-to-action .button {
 
 #contact button.send {
    text-transform: uppercase;
-   letter-spacing: 3px;
+   /* letter-spacing: 3px; */
    color: #fff;
    background: #0d0d0d;
-   border: none;
-   cursor: pointer;
-   height: auto;
-   display: inline-block;
-   border-radius: 3px;
-   margin-left: 26%;
+   /* border: none; */
+   /* cursor: pointer; */
+   /* height: auto; */
+   /* display: inline-block; */
+   /* border-radius: 3px; */
+   /* margin-left: 26%; */
 }
 
 #contact button.send:hover {
