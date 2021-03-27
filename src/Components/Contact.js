@@ -1,118 +1,188 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { init } from 'emailjs-com';
+import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class Contact extends Component {
-  render() {
+export default function Contact(props) {
+  const [formName, setName] = useState('');
+  const [formEmail, setEmail] = useState('');
+  const [formSubject, setSubject] = useState('');
+  const [formMessage, setMessage] = useState('');
 
-    if(this.props.data){
-      var name = this.props.data.name;
-      var street = this.props.data.address.street;
-      var city = this.props.data.address.city;
-      var state = this.props.data.address.state;
-      var zip = this.props.data.address.zip;
-      var phone= this.props.data.phone;
-      var email = this.props.data.email;
-      var message = this.props.data.contactmessage;
+  init('user_UJdsRqUdPt6gVajZYAFwN');
+
+  const sendEmail = (template) => {
+    emailjs
+      .send('service_qd7f7li', 'template_l76p0ih', template, 'user_UJdsRqUdPt6gVajZYAFwN')
+      .then((res) => {
+        if (res.status === 200) {
+          alert('Your message has been sent, thank you!');
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+        }
+      })
+      // Handle errors here however you like
+      .catch((err) => {
+        alert('Failed to send. Someone probably spamed my email, sorry for the inconvenience. Please see my email on the right.');
+        console.error('Failed to send feedback. Error: ', err);
+      });
+  };
+
+  var handleChange = (e) => {
+    if (e.target.id === 'contactName') setName(e.target.value);
+    else if (e.target.id === 'contactEmail') setEmail(e.target.value);
+    else if (e.target.id === 'contactSubject') setSubject(e.target.value);
+    else if (e.target.id === 'contactMessage') setMessage(e.target.value);
+  };
+
+  var submitClicked = () => {
+    console.log(formName);
+
+    if (formName.length === 0) {
+      alert('Name is required.');
+      return;
     }
+    if (formEmail.length === 0) {
+      alert('Email is required.');
+      return;
+    }
+    if (/\S+@\S+\.\S+/.test(formEmail) === false) {
+      alert('Email is invalid.');
+      return;
+    }
+    if (formMessage.length === 0) {
+      alert('Message is required.');
+      return;
+    }
+    message = formName + '\n' + formEmail + '\n' + formSubject + '\n' + formMessage;
 
-    return (
-      <section id="contact">
+    let templateParams = {
+      name: formName,
+      email: formEmail,
+      subject: formSubject,
+      message: formMessage,
+    };
 
-         <div className="row section-head">
+    sendEmail(templateParams);
+  };
 
-            <div className="two columns header-col">
-
-               <h1><span>Get In Touch.</span></h1>
-
-            </div>
-
-            <div className="ten columns">
-
-                  <p className="lead">{message}</p>
-
-            </div>
-
-         </div>
-
-         <div className="row">
-            <div className="eight columns">
-
-               <form action="" method="post" id="contactForm" name="contactForm">
-					<fieldset>
-
-                  <div>
-						   <label htmlFor="contactName">Name <span className="required">*</span></label>
-						   <input type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={this.handleChange}/>
-                  </div>
-
-                  <div>
-						   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-						   <input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={this.handleChange}/>
-                  </div>
-
-                  <div>
-						   <label htmlFor="contactSubject">Subject</label>
-						   <input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={this.handleChange}/>
-                  </div>
-
-                  <div>
-                     <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button className="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif" />
-                     </span>
-                  </div>
-					</fieldset>
-				   </form>
-
-           <div id="message-warning"> Error boy</div>
-				   <div id="message-success">
-                  <i className="fa fa-check"></i>Your message was sent, thank you!<br />
-				   </div>
-           </div>
-
-
-            <aside className="four columns footer-widgets">
-               <div className="widget widget_contact">
-
-					   <h4>Address and Phone</h4>
-					   <p className="address">
-						   {name}<br />
-						   {street} <br />
-						   {city}, {state} {zip}<br />
-						   <span>{phone}</span>
-					   </p>
-				   </div>
-
-               <div className="widget widget_tweets">
-                  <h4 className="widget-title">Latest Tweets</h4>
-                  <ul id="twitter">
-                     <li>
-                        <span>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">2 Days Ago</a></b>
-                     </li>
-                     <li>
-                        <span>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">3 Days Ago</a></b>
-                     </li>
-                  </ul>
-		         </div>
-            </aside>
-      </div>
-   </section>
-    );
+  if (props.data) {
+   //  var name = props.data.name;
+    var street = props.data.address.street;
+    var city = props.data.address.city;
+    var state = props.data.address.state;
+    var zip = props.data.address.zip;
+    var phone = props.data.phone;
+    var email = props.data.email;
+    var message = props.data.contactmessage;
   }
-}
 
-export default Contact;
+  return (
+    <section id='contact'>
+      <div className='row section-head'>
+        <div className='two columns header-col'>
+          <h1>
+            <span>Get In Touch.</span>
+          </h1>
+        </div>
+
+        <div className='ten columns'>
+          <p className='lead'>{message}</p>
+        </div>
+      </div>
+
+      <div className='row'>
+        <div className='eight columns'>
+          {/* <form id='contactForm' name='contactForm'> */}
+          <fieldset>
+            <div>
+              <label htmlFor='contactName'>
+                Name <span className='required'>*</span>
+              </label>
+              <input type='text' defaultValue='' size='35' id='contactName' name='contactName' value={formName} onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor='contactEmail'>
+                Email <span className='required'>*</span>
+              </label>
+              <input type='text' defaultValue='' size='35' id='contactEmail' name='contactEmail' value={formEmail} onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor='contactSubject'>Subject</label>
+              <input type='text' defaultValue='' size='35' id='contactSubject' name='contactSubject' value={formSubject} onChange={handleChange} />
+            </div>
+
+            <div>
+              <label htmlFor='contactMessage'>
+                Message <span className='required'>*</span>
+              </label>
+              <textarea cols='50' rows='15' id='contactMessage' name='contactMessage' value={formMessage} onChange={handleChange}></textarea>
+            </div>
+
+            <div>
+              <button className='send' onClick={submitClicked}>
+                Submit
+              </button>
+            </div>
+          </fieldset>
+          {/* </form> */}
+        </div>
+
+        <aside className='four columns footer-widgets'>
+          {/* <div className='widget widget_contact'>
+            <h4>Address and Phone</h4>
+            <p className='address'>
+              {name}
+              <br />
+              {street} <br />
+              {city}, {state} {zip}
+              <br />
+              <span>{phone}</span>
+            </p>
+          </div> */}
+          <h4>Contact Details</h4>
+          <table>
+              <tbody>
+                <tr>
+                  <td className='white'>
+                    <FontAwesomeIcon icon='user' />
+                  </td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td>Nuo (Tony) Chen</td>
+                </tr>
+                <tr>
+                  <td>
+                    <FontAwesomeIcon icon='envelope' />
+                  </td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td>{email}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <FontAwesomeIcon icon='phone-square' />
+                  </td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td>{phone}</td>
+                </tr>
+                <tr>
+                  <td>
+                    <FontAwesomeIcon icon='address-card' />
+                  </td>
+                  <td>&nbsp;&nbsp;</td>
+                  <td>
+                    {street}
+                    <br />
+                    {city}, {state}, {zip}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </aside>
+      </div>
+    </section>
+  );
+}
