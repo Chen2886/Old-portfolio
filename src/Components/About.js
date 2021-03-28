@@ -19,14 +19,38 @@ class About extends Component {
     return (
       <section id='about'>
         <div className='row'>
-          <div className='three columns'>
+          <div className='two columns'>
             <img className='profile-pic' src={profilepic} alt='Tim Baker Profile Pic' />
           </div>
-          <div className='nine columns main-col'>
+          <div className='ten columns main-col'>
             <h2>About Me</h2>
 
-            <p>{bio}</p>
+            <p>
+              I'm currently a full time student at Purdue University studying Computer Science with a concentration in Software Engineering. I
+              specialize in front-end, mobile and iOS development and would love to work for a Formula 1 team or a car manufacturer one day. My
+              passion for CS comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact
+              on the world. I also enjoy the problem solving aspect of programming and the ability to express your creativity.
+            </p>
+            <p>
+              Fun facts about me:
+              <ul>
+                <li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;In my down time, I like to organize hackathons, play Cities: Skylines, Apex Legends
+                  and make tiramisu!
+                </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;I've passed the written exam for a private pilot license.</li>
+                <li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;Skydiving and participating in professional karting are at the top of my bucket
+                  list.
+                </li>
+                <li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;My summer of 2019, I visited the White House and toured the press conference room!
+                </li>
 
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;My newest hobby is going to Topgolf!</li>
+              </ul>
+            </p>
+            <br/>
             <h2>Contact Details</h2>
             <table>
               <tbody>

@@ -13,7 +13,8 @@ class Resume extends Component {
               <em className='date'>{education.graduated}</em>
             </p>
             <p>
-              I am a receiptiant of Dr. Ed & Esther Lee Scholarship with a 3.59 GPA, and was nominated for Dean’s List Honoree for Fall 2018, Spring 2020, and Fall 2020. 
+              I am a recipient of Dr. Ed & Esther Lee Scholarship with a 3.59 GPA, and was nominated for Dean’s List Honoree for Fall 2018, Spring
+              2020, and Fall 2020.
             </p>
           </div>
         );
@@ -75,8 +76,6 @@ class Resume extends Component {
           </div>
 
           <div className='nine columns main-col'>
-            <p>{skillmessage}</p>
-
             <div className='bars'>
               <ul className='skills'>{skills}</ul>
             </div>
