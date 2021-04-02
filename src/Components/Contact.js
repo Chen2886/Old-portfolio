@@ -85,7 +85,7 @@ export default function Contact(props) {
       <div className='row section-head'>
         <div className='two columns header-col'>
           <h1>
-            <span>Get In Touch.</span>
+            <span>Send me a message!</span>
           </h1>
         </div>
 

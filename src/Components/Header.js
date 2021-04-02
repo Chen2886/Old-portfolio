@@ -50,11 +50,11 @@ class Header extends Component {
                 Works
               </a>
             </li>
-            <li>
+            {/* <li>
               <a className='smoothscroll' href='#testimonials'>
                 Testimonials
               </a>
-            </li>
+            </li> */}
             <li>
               <a className='smoothscroll' href='#contact'>
                 Contact
