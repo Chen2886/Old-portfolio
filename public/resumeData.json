@@ -110,18 +110,31 @@
     ]
   },
   "portfolio": {
+    "winningprojects": [
+      {
+        "title": "C-City",
+        "category": "BoilerMake 8 Winning Project. Web App my team built to recommend where people to move.",
+        "image": "ccity.jpg",
+        "url": "https://devpost.com/software/c-city"
+      },
+      {
+        "title": "StarStats",
+        "category": "Codepath Design Winning Project. An iOS app that display BrawlStar's user statistics.",
+        "image": "starstats.jpg",
+        "url": "https://github.com/BrawlStats-Purdue/BrawlStats"
+      },
+      {
+        "title": "No One Eats Alone",
+        "category": "HelloWorld2k18 Winning Project. An iOS app that helps students plan events. This was my my first stab at iOS development and Hackathon!",
+        "image": "ios.jpg"
+      }
+    ],
     "projects": [
       {
         "title": "Personal Website",
         "category": "My own website for showcasing.",
         "image": "personalwebsite.jpg",
         "url": "https://chen2886.github.io"
-      },
-      {
-        "title": "C-City",
-        "category": "BoilerMake 8 Winning Project. Web App my team built to recommend where people to move.",
-        "image": "ccity.jpg",
-        "url": "https://devpost.com/software/c-city"
       },
       {
         "title": "Ez-Prez: Presentation Generator",
@@ -134,12 +147,6 @@
         "category": "A JavaFX with Sqlite3 application that track's a company's inventory.",
         "image": "businessmanage.jpg",
         "url": "https://github.com/Chen2886/Business-Management"
-      },
-      {
-        "title": "StarStats",
-        "category": "Codepath Design Winning Project. An iOS app that display BrawlStar's user statistics.",
-        "image": "starstats.jpg",
-        "url": "https://github.com/BrawlStats-Purdue/BrawlStats"
       },
       {
         "title": "Circle",

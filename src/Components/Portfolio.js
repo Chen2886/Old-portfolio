@@ -8,18 +8,65 @@ class Portfolio extends Component {
         return (
           <div key={projects.title} className='columns portfolio-item'>
             <div className='item-wrap'>
-              <a href={projects.url} title={projects.title}>
-                <img alt={projects.title} src={projectImage} />
-                <div className='overlay'>
-                  <div className='portfolio-item-meta'>
-                    <h5>{projects.title}</h5>
-                    <p>{projects.category}</p>
+              {projects.url !== undefined && (
+                <a href={projects.url} title={projects.title}>
+                  <img alt={projects.title} src={projectImage} />
+                  <div className='overlay'>
+                    <div className='portfolio-item-meta'>
+                      <h5>{projects.title}</h5>
+                      <p>{projects.category}</p>
+                    </div>
+                  </div>
+                  <div className='link-icon'>
+                    <i className='fa fa-link'></i>
+                  </div>
+                </a>
+              )}
+              {projects.url === undefined && (
+                <div title={projects.title}>
+                  <img alt={projects.title} src={projectImage} />
+                  <div className='overlay'>
+                    <div className='portfolio-item-meta'>
+                      <h5>{projects.title}</h5>
+                      <p>{projects.category}</p>
+                    </div>
                   </div>
                 </div>
-                <div className='link-icon'>
-                  <i className='fa fa-link'></i>
+              )}
+            </div>
+          </div>
+        );
+      });
+      var winningProjects = this.props.data.winningprojects.map(function (projects) {
+        var projectImage = 'images/portfolio/' + projects.image;
+        return (
+          <div key={projects.title} className='columns portfolio-item'>
+            <div className='item-wrap'>
+              {projects.url !== undefined && (
+                <a href={projects.url} title={projects.title}>
+                  <img alt={projects.title} src={projectImage} />
+                  <div className='overlay'>
+                    <div className='portfolio-item-meta'>
+                      <h5>{projects.title}</h5>
+                      <p>{projects.category}</p>
+                    </div>
+                  </div>
+                  <div className='link-icon'>
+                    <i className='fa fa-link'></i>
+                  </div>
+                </a>
+              )}
+              {projects.url === undefined && (
+                <div title={projects.title}>
+                  <img alt={projects.title} src={projectImage} />
+                  <div className='overlay'>
+                    <div className='portfolio-item-meta'>
+                      <h5>{projects.title}</h5>
+                      <p>{projects.category}</p>
+                    </div>
+                  </div>
                 </div>
-              </a>
+              )}
             </div>
           </div>
         );
@@ -30,8 +77,15 @@ class Portfolio extends Component {
       <section id='portfolio'>
         <div className='row'>
           <div className='twelve columns collapsed'>
+            <h1>Award-Winning Projects</h1>
+            <div id='portfolio-wrapper' className='bgrid-thirds s-bgrid-thirds cf'>
+              {winningProjects}
+            </div>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='twelve columns collapsed'>
             <h1>Projects</h1>
-
             <div id='portfolio-wrapper' className='bgrid-thirds s-bgrid-thirds cf'>
               {projects}
             </div>

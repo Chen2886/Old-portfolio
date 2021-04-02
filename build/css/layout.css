@@ -480,6 +480,7 @@ ul#nav li.current a {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
 .portfolio-item .item-wrap a {
   display: block;
   cursor: pointer;
