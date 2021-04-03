@@ -3,6 +3,7 @@ import { init } from 'emailjs-com';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 
 export default function Contact(props) {
   const [formName, setName] = useState('');
@@ -124,11 +125,16 @@ export default function Contact(props) {
               <textarea cols='50' rows='15' id='contactMessage' name='contactMessage' value={formMessage} onChange={handleChange}></textarea>
             </div>
 
-            <Grid container justify='center'>
-              <Grid item xs={4}>
-                <button className='send' onClick={submitClicked}>
-                  Submit
-                </button>
+            <Grid container justify='center' alignItems='center'>
+              <Hidden smUp xs={12}>
+                <div style={{ marginTop: '0.1rem' }}>&nbsp;</div>
+              </Hidden>
+              <Grid item xs={12}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <button className='send' onClick={submitClicked}>
+                    Submit
+                  </button>
+                </div>
               </Grid>
             </Grid>
           </fieldset>
