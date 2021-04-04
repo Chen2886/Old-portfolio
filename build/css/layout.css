@@ -230,9 +230,9 @@ ul#nav li.current a {
   color: #ddd;
 }
 #about td {
-  line-height: 30px;
-  color: #ddd;
-}
+   line-height: 30px;
+   color: #ddd;
+ }
 #about .profile-pic {
   position: relative;
   width: 120px;
@@ -344,7 +344,7 @@ ul#nav li.current a {
 
   margin: 0;
   padding-right: 24px;
-  background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);;
   display: inline-block;
   height: 42px;
   line-height: 42px;
@@ -457,13 +457,13 @@ ul#nav li.current a {
 } */
 
 #portfolio h1 {
-  font: 22px/30px 'opensans-bold', sans-serif;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 48px;
-  text-align: center;
-}
+   font: 22px/30px 'opensans-bold', sans-serif;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin-bottom: 48px;
+   text-align: center;
+ }
 
 /* Portfolio Content */
 #portfolio-wrapper .columns {
@@ -960,21 +960,21 @@ call-to-action .button {
 }
 
 #contact button.send {
-  text-transform: uppercase;
-  /* letter-spacing: 3px; */
-  color: #fff;
-  background: #0d0d0d;
-  /* border: none; */
-  /* cursor: pointer; */
-  /* height: auto; */
-  /* display: inline-block; */
-  /* border-radius: 3px; */
-  /* margin-left: 26%; */
+   text-transform: uppercase;
+   /* letter-spacing: 3px; */
+   color: #fff;
+   background: #0d0d0d;
+   /* border: none; */
+   /* cursor: pointer; */
+   /* height: auto; */
+   /* display: inline-block; */
+   /* border-radius: 3px; */
+   /* margin-left: 26%; */
 }
 
 #contact button.send:hover {
-  color: #0d0d0d;
-  background: #fff;
+   color: #0d0d0d;
+   background: #fff;
 }
 #contact span.required {
   color: #11abb0;
