@@ -40,8 +40,6 @@ export default function Contact(props) {
   };
 
   var submitClicked = () => {
-    console.log(formName);
-
     if (formName.length === 0) {
       alert('Name is required.');
       return;
@@ -103,19 +101,19 @@ export default function Contact(props) {
               <label htmlFor='contactName'>
                 Name <span className='required'>*</span>
               </label>
-              <input type='text' defaultValue='' size='35' id='contactName' name='contactName' value={formName} onChange={handleChange} />
+              <input type='text' size='35' id='contactName' name='contactName' value={formName} onChange={handleChange} />
             </div>
 
             <div>
               <label htmlFor='contactEmail'>
                 Email <span className='required'>*</span>
               </label>
-              <input type='text' defaultValue='' size='35' id='contactEmail' name='contactEmail' value={formEmail} onChange={handleChange} />
+              <input type='text' size='35' id='contactEmail' name='contactEmail' value={formEmail} onChange={handleChange} />
             </div>
 
             <div>
               <label htmlFor='contactSubject'>Subject</label>
-              <input type='text' defaultValue='' size='35' id='contactSubject' name='contactSubject' value={formSubject} onChange={handleChange} />
+              <input type='text' size='35' id='contactSubject' name='contactSubject' value={formSubject} onChange={handleChange} />
             </div>
 
             <div>
@@ -126,7 +124,7 @@ export default function Contact(props) {
             </div>
 
             <Grid container justify='center' alignItems='center'>
-              <Hidden smUp xs={12}>
+              <Hidden smUp>
                 <div style={{ marginTop: '0.1rem' }}>&nbsp;</div>
               </Hidden>
               <Grid item xs={12}>

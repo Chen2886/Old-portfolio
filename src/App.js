@@ -10,14 +10,29 @@ import Portfolio from './Components/Portfolio';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faUser, faAddressCard, faEnvelope, faPhoneSquare } from '@fortawesome/free-solid-svg-icons';
+import GA4React from 'ga-4-react';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.initGA();
     library.add(fab, faUser, faAddressCard, faEnvelope, faPhoneSquare);
     this.state = {
       resumeData: {},
     };
+  }
+
+  async initGA() {
+    const ga4react = new GA4React('G-CYT59T4V3V');
+    ga4react.initialize().then(
+      (ga4) => {
+        ga4.pageview('home');
+        ga4.gtag('event', 'pageview', 'home');
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
   }
 
   getResumeData() {
@@ -53,6 +68,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;

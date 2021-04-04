@@ -8,7 +8,7 @@ class About extends Component {
     if (this.props.data) {
       // var name = this.props.data.name;
       var profilepic = 'images/' + this.props.data.image;
-      var bio = this.props.data.bio;
+      // var bio = this.props.data.bio;
       var street = this.props.data.address.street;
       var city = this.props.data.address.city;
       var state = this.props.data.address.state;
@@ -36,7 +36,7 @@ class About extends Component {
               passion for CS comes from it's versatility and because it provides the opportunity to create platforms to help others and make an impact
               on the world. I also enjoy the problem solving aspect of programming and the ability to express your creativity.
             </p>
-            <p>
+            <div style={{ color: '#ddd', lineHeight: '30px' }}>
               Fun facts about me:
               <ul>
                 <li>
@@ -54,7 +54,7 @@ class About extends Component {
 
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;My newest hobby is going to Topgolf!</li>
               </ul>
-            </p>
+            </div>
             <br />
             <Grid container justify='center' alignItems='center' style={{ marginTop: '1rem' }}>
               <Grid item xs={12} sm={8}>
@@ -102,7 +102,7 @@ class About extends Component {
                   </tbody>
                 </table>
               </Grid>
-              <Hidden smUp xs={12}>
+              <Hidden smUp>
                 <div style={{ marginTop: '0.1rem' }}>&nbsp;</div>
               </Hidden>
               <Grid item xs={12} sm={4}>
