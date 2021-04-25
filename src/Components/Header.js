@@ -23,14 +23,14 @@ class Header extends Component {
     function Description() {
       var arr = ['Software Engineer', 'Researcher', 'Gamer'];
       return (
-        <Typing loop speed={25}>
+        <Typing loop speed={50}>
           <h3>
             {arr.map((item) => (
               <>
                 {item}
-                <Typing.Speed ms={2} />
+                <Typing.Speed ms={15} />
                 <Typing.Backspace count={18} delay={2000} />
-                <Typing.Speed ms={25} />
+                <Typing.Speed ms={50} />
               </>
             ))}
           </h3>
