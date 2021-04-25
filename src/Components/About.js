@@ -19,7 +19,7 @@ class About extends Component {
     }
 
     var downloadClicked = () => {
-      window.open('https://drive.google.com/file/d/1fP7SWXoDnHaW9WkoYq4jcK8r7EbTBCnz/view?usp=sharing', '_blank');
+      window.open('https://drive.google.com/file/d/14Nupb9SvA5LyGL-Xim8aMUYpDO2EsH5_/view?usp=sharing', '_blank');
     };
 
     return (

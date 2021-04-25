@@ -112,6 +112,12 @@
   "portfolio": {
     "winningprojects": [
       {
+        "title": "Composem",
+        "category": "PickHacks 2021 1st place winner, and best fun hack. Composem provides an innovative cloud storage solution to turn a simplistic, accessible markdown syntax into sheet music.",
+        "image": "composem.jpg",
+        "url": "https://devpost.com/software/c-city"
+      },
+      {
         "title": "C-City",
         "category": "BoilerMake 8 Winning Project. Web App my team built to recommend where people to move.",
         "image": "ccity.jpg",

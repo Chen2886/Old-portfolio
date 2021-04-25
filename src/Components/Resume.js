@@ -13,7 +13,7 @@ class Resume extends Component {
               <em className='date'>{education.graduated}</em>
             </p>
             <p>
-              I am a recipient of Dr. Ed & Esther Lee Scholarship with a 3.59 GPA, and was nominated for Dean’s List Honoree for Fall 2018, Spring
+              I am a recipient of Dr. Ed & Esther Lee Scholarship and CS Unrestricted/CPP Scholarship with a 3.59 GPA, and was nominated for Dean’s List Honoree for Fall 2018, Spring
               2020, and Fall 2020.
             </p>
           </div>
