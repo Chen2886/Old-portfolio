@@ -22,6 +22,7 @@ class Header extends Component {
 
     function Description() {
       var arr = ['Software Engineer', 'Researcher', 'Gamer'];
+      arr.sort(() => Math.random() - 0.5)
       return (
         <Typing loop speed={50}>
           <h3>
