@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Typing from 'react-typing-animation';
 
 class Header extends Component {
   render() {
@@ -17,6 +18,24 @@ class Header extends Component {
           </li>
         );
       });
+    }
+
+    function Description() {
+      var arr = ['Software Engineer', 'Researcher', 'Gamer'];
+      return (
+        <Typing loop speed={25}>
+          <h3>
+            {arr.map((item) => (
+              <>
+                {item}
+                <Typing.Speed ms={2} />
+                <Typing.Backspace count={18} delay={2000} />
+                <Typing.Speed ms={25} />
+              </>
+            ))}
+          </h3>
+        </Typing>
+      );
     }
 
     return (
@@ -66,8 +85,10 @@ class Header extends Component {
         <div className='row banner'>
           <div className='banner-text'>
             <h1 className='responsive-headline'>Hi, I'm Tony!</h1>
+            <Description></Description>
+
             {/* <h3>I'm a {city} based <span>{occupation}</span>. {description}.</h3> */}
-            <h3>Software Engineer | Researcher | Gamer</h3>
+
             <hr />
             <ul className='social'>{networks}</ul>
           </div>
