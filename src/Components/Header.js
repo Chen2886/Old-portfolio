@@ -28,7 +28,7 @@ class Header extends Component {
             {arr.map((item) => (
               <>
                 {item}
-                <Typing.Speed ms={25} />
+                <Typing.Speed ms={35} />
                 <Typing.Backspace count={18} delay={2000} />
                 <Typing.Speed ms={50} />
               </>
